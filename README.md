@@ -1,6 +1,8 @@
-# Beamer Template for Informatik Faculty, OvGU
+# Beamer Template for OvGU
 
 Welcome! This repository contains a custom defined beamer template.
+
+Please be warned, this is **NOT AN OFFICAL** template.
 
 To understand how to use this template, please follow the example provided in `slide.tex`. 
 
