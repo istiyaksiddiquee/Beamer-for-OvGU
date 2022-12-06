@@ -1,0 +1,104 @@
+\mode<presentation>
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+%\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+\usecolortheme{dove}
+
+\useoutertheme[footline=authorinstitutetitle,subsection=false]{smoothbars}
+\makeatletter % [add curpage/total page at the bottom](http://tex.stackexchange.com/questions/100838/beamer-dresden-theme-miniframes-appeareance-and-frame-number-insertion)
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+
+\setbeamertemplate{footline} 
+  {%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+      \leavevmode{\usebeamerfont{author in head/foot}\insertshortauthor}%
+      \hfill%
+      {\usebeamerfont{title in head/foot}\insertshorttitle}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+      {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
+      \hfill%
+      {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+  }
+\makeatother
+
+\useinnertheme{circles}
+
+%\useoutertheme{default}
+% \useinnertheme[shadow=true]{rounded}
+
+\xdefinecolor{ovgu-gray}{gray}{0.85}  %RGB#D71440
+\xdefinecolor{ovgu-blue}{RGB}{0, 104,180}  %RGB#181C62
+
+\setbeamercolor{footline}{bg=ovgu-gray}
+\setbeamercolor{frametitle}{bg=ovgu-gray,fg=black}
+\setbeamercolor{title}{bg=ovgu-gray}
+\setbeamerfont{frametitle}{size=\large}
+%\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{caption}[numbered]
+
+% \setbeamertemplate{frametitle continuation}[from second]
+% Now get rid of all the colours
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry location}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black}
+% and kill the abominable icon
+% \setbeamertemplate{bibliography item}{}
+
+\setbeamercolor{palette primary}{use=structure,fg=black,bg=structure.fg}
+\setbeamercolor{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor{palette tertiary}{use=structure,fg=black,bg=structure.fg!50!black}
+\setbeamercolor{palette quaternary}{fg=black,bg=structure.fg!70!black}
+%\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+\setbeamercolor{titlelike}{parent=palette primary}
+
+%% try
+\setbeamercolor{block title}{bg=structure.fg!70!black, fg=black}
+\setbeamercolor{block body}{bg=structure.fg!95!black, fg=black}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamercolor{local structure}{fg=black}
+\setbeamercolor{fine separation line}{}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
+%\setbeamercolor{palette sidebar quaternary}{fg=white}
+\setbeamercolor{section in sidebar}{fg=black}
+\setbeamercolor{section in sidebar shaded}{fg=grey}
+\setbeamercolor{separation line}{}
+\setbeamercolor{sidebar}{bg=ovgu-gray}
+\setbeamercolor{sidebar}{parent=palette primary}
+\setbeamercolor{structure}{fg=ovgu-gray}
+\setbeamercolor{subsection in sidebar}{fg=brown}
+\setbeamercolor{subsection in sidebar shaded}{fg=gray}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{section number projected}{bg=structure.fg!75!black, fg=white}
+
+\AtBeginSection[]{
+	\begin{frame}
+		\tableofcontents[sectionstyle=show/hide,subsectionstyle=show/hide,subsubsectionstyle=show/hide]
+	\end{frame}
+}
+\AtBeginSubsection[]{
+	\begin{frame}
+		\tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+	\end{frame}
+}
+
+\mode
+<all>

@@ -1,0 +1,81 @@
+\documentclass{beamer}
+\usepackage{hyperref}
+\usepackage{inf-ovgu}
+\usepackage[sorting=none,giveninits=true,url=false,doi=false,eprint=false]{biblatex}
+\usepackage{dirtytalk}
+\usepackage{listings}
+
+\newcommand{\minimize}[1]{\underset{#1}{\operatorname{minimize}}\;}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{argmin}}\;}
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{argmax}}\;}
+
+\author[\copyright~Istiyak H. Siddiquee]{Istiyak H. Siddiquee}
+\title[Regularization \& Norms]{Regularization and the Two Norms}
+\subtitle{Demo for the Beamer Template}
+\institute[FIN, OvGU, Magdeburg.]{Faculty of Computer Science, \\Otto-von-Guericke University, Magdeburg.}
+
+\date{}
+
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{ovgu-inf-blue}{RGB}{0 104 180}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+\addbibresource{demo.bib}  
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \vspace{-15pt}
+    
+    \begin{figure}
+        \begin{center}
+            \hspace{5pt}
+            \includegraphics[width=0.6\linewidth]{inf-ovgu-logo.eps}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/hide,subsubsectionstyle=show/hide]
+\end{frame}
+
+
+
+\input{sections/section-one}
+\input{sections/section-two}
+
+\section{References}
+\begin{frame}[allowframebreaks]
+        \frametitle{References}
+        % \bibliographystyle{abbrv}
+        % \bibliography{fake}
+        \printbibliography
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+        {\Huge Thank you!}
+    \end{center}
+\end{frame}
+
+\end{document}

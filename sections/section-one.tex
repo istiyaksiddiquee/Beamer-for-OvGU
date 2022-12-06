@@ -1,0 +1,17 @@
+\section{Definition}
+
+\begin{frame}{What is Regularization} \label{regularization}
+
+    \begin{block}{Regularization}
+    \say{Penalizing the weights and biases of the error function to keep them from reaching large values is called Regularization~\cite{bishoppattern2006}}.
+
+    Mathematically, 
+
+    \begin{equation}
+    \label{eqn:general}
+        \minimize{x} \quad \left\|Ax-b\right\|_2^2+\lambda \left\|x\right\|_n
+    \end{equation}
+
+    The last term of equation \ref{eqn:general} is the regularization term here.
+    \end{block}
+\end{frame}
